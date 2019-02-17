@@ -1,0 +1,18 @@
+<h1>Step 1</h1>
+<p>点击进入微博网页版，登陆并进入自己的主页</p><a href='https://weibo.cn/'>微博网页版</a>
+<p>查看此时的浏览器网址，格式如同：https://m.weibo.cn/profile/3172759482，复制后面的一串数字，此为当前用户的UID</p>
+<h1>Step 2</h1>
+<p>将复制的数字填入下框，并点击「开始生成」按钮</p>
+<input type="text" id="UID" >
+<input type="button" value="开始生成" onclick="getValue()">
+<p id="show"></p>
+
+<script>
+    function getValue() { 
+    	var a = document.getElementById("UID").value;
+        document.getElementById("show").innerHTML = "正在生成！！根据微博内容量的不同，生成耗时在0～3分钟不等，请耐心等待～";
+        url = 'http://47.107.128.86:8889/get_result?UID='+a;
+        window.location.href=url;
+    }
+
+</script>
